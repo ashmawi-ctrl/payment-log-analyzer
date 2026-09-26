@@ -1,5 +1,7 @@
 # Payment Log Analyzer
 
+[![quality](https://github.com/ashmawi-ctrl/payment-log-analyzer/actions/workflows/quality.yml/badge.svg)](https://github.com/ashmawi-ctrl/payment-log-analyzer/actions/workflows/quality.yml)
+
 A command-line tool for turning payment/API logs into a compact operational report.
 
 I built this around a common production-support problem: a large log export may contain hundreds or thousands of records, but the useful questions are usually much smaller.
