@@ -49,6 +49,10 @@ def load_records(path: str | Path) -> tuple[list[PaymentRecord], list[ParseError
 
 
 def parse_record(row: dict[str, object]) -> PaymentRecord:
+    parse_error = row.get("__parse_error__")
+    if parse_error:
+        raise ValueError(str(parse_error))
+
     missing = sorted(field for field in REQUIRED_FIELDS if _is_blank(row.get(field)))
     if missing:
         raise ValueError(f"missing required fields: {', '.join(missing)}")
